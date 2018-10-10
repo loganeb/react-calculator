@@ -77,7 +77,7 @@ class Calculator extends React.Component {
     const numInput = this.state.numInput;
 
     //Prevents input of more than 40 chars, input of operators 
-    //as first char and input of operators directly after decimals
+    //and input of operators directly after decimals
     if(this.inputTooLong() 
       || currentInput.charAt(currentInput.length - 1) === '.')
       return;
@@ -115,6 +115,10 @@ class Calculator extends React.Component {
       })
       return
     }
+
+    //prevents operators other than '-' as first char in inputString
+    if(inputString.length <= 1)
+      return
 
     /* If last input was operator and new operator is not "-",
     that operator is replaced with new input */
