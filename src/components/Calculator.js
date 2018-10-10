@@ -22,7 +22,8 @@ class Calculator extends React.Component {
   }
 
   inputTooLong = () => {
-    if(this.state.inputString.length > 40)
+    if(this.state.inputString.length > 40 
+    || this.state.currentInput.length > 12)
       return true;
     else
       return false;
@@ -39,15 +40,14 @@ class Calculator extends React.Component {
 
   //Handles input of digits
   handleInput = (input) => {
-    console.log(this.state);
     if(this.inputTooLong())
       return;
 
     //Was last input enter?
-    if(!this.state.numInput && this.state.answer !== ''){
+    if(this.state.answer !== ''){
         this.setState({
-          inputString: ' ' + input,
-          currentInput: input,
+          inputString: this.state.inputString.concat(input),
+          currentInput: this.state.currentInput.concat(input),
           numInput: true,
           answer: ''
         });
@@ -76,7 +76,7 @@ class Calculator extends React.Component {
     const currentInput = this.state.inputString;
     const numInput = this.state.numInput;
 
-    //Prevents input of more than 40 chars, input of operators 
+    //Prevents input of more than 40 chars
     //and input of operators directly after decimals
     if(this.inputTooLong() 
       || currentInput.charAt(currentInput.length - 1) === '.')
@@ -318,16 +318,19 @@ class Calculator extends React.Component {
   render(){
     return (
       <div className="calculator">
-        <div className="past-input">{this.state.inputString}</div>
-        <div className="current-input">
-          <span id="current">{this.state.currentInput}</span>
+        <div className="screen">
+          <div className="past-input">{this.state.inputString}</div>
+          <div className="current-input">{this.state.currentInput}</div>
         </div>
-        <NumPad className="numpad" inputFunc={(input) => this.handleInput(input)}/>
-        <OpButtons inputFunc={(input) => this.handleOpInput(input)}/>
-        <Decimal inputFunc={() => this.handleDecimal()}/>
-        <Clear clearFunc={() => this.handleClear()}/>
-        <Enter enterFunc={() => this.handleEnter()}/>
-        <Delete deleteFunc={() => this.handleDelete()}/>
+        <div className="buttons">
+          <Clear className="Clear" clearFunc={() => this.handleClear()}/>
+          <Delete className="Delete" deleteFunc={() => this.handleDelete()}/>
+          <NumPad className="NumPad" inputFunc={(input) => this.handleInput(input)}/>
+          <OpButtons inputFunc={(input) => this.handleOpInput(input)}/>
+          <Decimal inputFunc={() => this.handleDecimal()}/>
+          <Enter enterFunc={() => this.handleEnter()}/>
+        </div>
+        
       </div>
     );
   }
