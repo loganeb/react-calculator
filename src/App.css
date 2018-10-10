@@ -1,16 +1,17 @@
+body{
+  background-image: linear-gradient(to bottom right, rgb(150, 184, 210),rgb(43, 119, 242));
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
   align-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: auto;
   padding: 20px;
   color: white;
 }
@@ -18,53 +19,63 @@
 .App-intro {
   font-size: large;
 }
+
 .calculator{
   margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   width: auto;
   height: auto;
   max-width: 290px;
-  max-height: 620px;
+  max-height: 680px;
   background-color: dimgray;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
 }
-.numpad {
-  padding: 5px;
-  width: auto;
-  height: auto;
-  max-width: 200px;
-  max-height: 200px;
+
+.buttons{
+  display: flex;
+  flex-direction: column;
 }
 
-.App button{
+button{
+  border: none;
+  border-radius: 5px;
   margin: 5px;
-  width: 50px;
-  height:  50px;
+  min-width: 50px;
+  min-height:  50px;
   background-color: black;
   color: white;
-  display: inline-block;
+  font-size: 1.1em;
 }
+
+.top-buttons {
+  width: 100%;
+}
+
 .screen {
-  margin-top: 20px;
+  margin: 20px;
   height: auto;
+  margin: auto;
+  width: 90%;
+  display: block;
 }
-.past-input{
+
+.past-input, .current-input{
   padding: 5px;
   background-color: rgb(0,0,0);
-  color: rgb(76, 151, 76);
   text-align: right;
+}
+
+.past-input{
+  color: rgb(76, 151, 76);
   font-size: 18px;
   height: 20px;
 }
+
 .current-input{
-  padding: 5px;
-  background-color: rgb(0,0,0);
   color: rgb(95, 192, 95);
-  text-align: right;
   font-size: 30px;
   height: 35px;
 }
