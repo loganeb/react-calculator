@@ -8,13 +8,8 @@ body{
   align-content: center;
 }
 
-.App-header {
-  height: auto;
-  padding: 20px;
-}
-
 .calculator{
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -98,15 +93,6 @@ body{
   background-repeat: no-repeat;
 }
 
-.App-header {
-  background-color: #222;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .calculator{
   background-image:linear-gradient(to right, rgb(239, 212, 141), rgb(170, 151, 99));
 
@@ -155,4 +141,9 @@ button:hover{
 
 .current-input{
   font-size: 30px;
+}
+
+.footer a{
+  text-decoration: none;
+  color: black;
 }

@@ -6,10 +6,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>React Calculator</h2>
-        </div>
         <Calculator/>
+
+        <div className="footer">
+          <a href="https://github.com/loganeb/react-calculator">
+            Built by Logan Bynes
+          </a>
+        </div>
       </div>  
     );
   }
