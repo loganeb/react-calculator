@@ -20,7 +20,7 @@ class NumPad extends React.Component {
   
     render() {
       return (
-        <div>
+        <div className="NumPad">
           <div>{this.state.buttons[1]}{this.state.buttons[2]}{this.state.buttons[3]}</div>
           <div>{this.state.buttons[4]}{this.state.buttons[5]}{this.state.buttons[6]}</div>
           <div>{this.state.buttons[7]}{this.state.buttons[8]}{this.state.buttons[9]}</div>

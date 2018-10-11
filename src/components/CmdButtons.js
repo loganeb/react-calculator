@@ -12,7 +12,7 @@ export const Decimal = (props) => {
 export const Clear = (props) => {
     
     return(
-        <button id="clear" onClick={() => props.clearFunc()}>Clear</button>
+        <button id="clear" onClick={() => props.clearFunc()}>CLEAR</button>
     );
     
 }
@@ -21,7 +21,7 @@ export const Clear = (props) => {
 export const Enter = (props) => {
     
     return(
-        <button id="enter" onClick={() => props.enterFunc()}>Enter</button>
+        <button id="enter" onClick={() => props.enterFunc()}>ENTER</button>
     );
     
 }
@@ -29,7 +29,7 @@ export const Enter = (props) => {
 export const Delete = (props) => {
       
     return(
-        <button id="delete" onClick={() => props.deleteFunc()}>Delete</button>
+        <button id="delete" onClick={() => props.deleteFunc()}>DELETE</button>
     );
 
 }

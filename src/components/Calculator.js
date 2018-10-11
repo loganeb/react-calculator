@@ -329,9 +329,9 @@ class Calculator extends React.Component {
             <Delete className="Delete" deleteFunc={() => this.handleDelete()}/>
           </div>
             
-          <NumPad className="NumPad" inputFunc={(input) => this.handleInput(input)}/>
+          <NumPad inputFunc={(input) => this.handleInput(input)}/>
           
-          <div className="sideButtons">
+          <div className="side-buttons">
             <OpButtons className="OpButtons" inputFunc={(input) => this.handleOpInput(input)}/>
             <Decimal className="Decimal" inputFunc={() => this.handleDecimal()}/>
             <Enter className="Enter" enterFunc={() => this.handleEnter()}/>
